@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from '../features/login/pages/login/login.component';
 import { LoginModule } from '../features/login/login.module';
+import { HttpClientModule} from '@angular/common/http'
 
 
 
@@ -13,7 +14,8 @@ import { LoginModule } from '../features/login/login.module';
     FooterComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,

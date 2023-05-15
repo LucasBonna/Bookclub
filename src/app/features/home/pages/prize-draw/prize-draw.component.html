@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div *ngIf="chosen == false">
+  <div class="produtos-showcase"  *ngFor="let book of books">
+    <img width="250px" height="250px" [src]="book.image">
+    <h1>Nome: {{ book.name }}</h1>
+    <h2>Quantidade: {{ book.quantity }}</h2>
+    <button class="confirm-book" (click)="confirmBook(book)">Escolher este livro!</button>
+    <hr>
+    <br>
+  </div>
+</div>
+<div *ngIf="chosen == true">
+  <h1>Obrigado por escolher o livro {{ book?.name }}, em breve ele chegará na sua casa!</h1>
+</div>
+<app-footer></app-footer>

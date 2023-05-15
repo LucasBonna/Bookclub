@@ -1,8 +1,14 @@
 <app-header></app-header>
 <div ng-if="subscription">
-  <div class="produtos-showcase">
+  <div *ngIf="this.bought == false" class="produtos-showcase">
     <h1>Descricao: {{ subscription?.description }}</h1>
     <h2>Preco: {{ subscription?.price }}</h2>
+    <button class="buy-subscription" (click)="buySubscription()">Comprar</button>
+  </div>
+  <div *ngIf="this.bought == true">
+    <h1>VOCE JA COMPROU UMA INSCRIÇÃO</h1>
+    <h2>Clique no botao abaixo se deseja cancelar a sua inscrição</h2>
+    <button class="cancel-subscription" (click)="cancelSubscription()">Cancelar Inscrição</button>
   </div>
 </div>
 <app-footer></app-footer>

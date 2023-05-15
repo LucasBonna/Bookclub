@@ -9,14 +9,27 @@ import { User } from '../../models/user.model';
 })
 export class HeaderComponent implements OnInit{
 
-constructor(private router: Router) { }
+constructor(
+  private router: Router) { }
 
 user?: User;
+isAdmin?: User;
+isBought?: boolean;
 
 ngOnInit(): void {
   const userSessionStorage = sessionStorage.getItem('user');
   if(userSessionStorage) {
     this.user = JSON.parse(userSessionStorage);
+  };
+  const adminSessionStorage = sessionStorage.getItem('isAdmin');
+  if(adminSessionStorage) {
+  this.isAdmin = JSON.parse(adminSessionStorage)
+  }
+  const isboughtLocalStorage = localStorage.getItem('bought')
+  if( isboughtLocalStorage == userSessionStorage) {
+    this.isBought = true;
+  } else {
+    this.isBought = false;
   }
 }
 
