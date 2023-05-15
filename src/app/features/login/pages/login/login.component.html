@@ -1,0 +1,17 @@
+<app-header></app-header>
+  <div class="container">
+      <div class="login-container">
+        <h3>Inisira seu Login e Senha para continuar</h3>
+        <form class="login-form">
+          <div class="form-field">
+            <input type="email" [(ngModel)]="email" placeholder="Insira seu Email aqui:" name="email" required>
+          </div>
+          <div class="form-field">
+            <input type="password" [(ngModel)]="password" placeholder="Insira sua Senha aqui:" name="password" required>
+          </div>
+          <p class="error" *ngIf="error"> Usuário ou Senha inválidos, por favor tente novamente!</p>
+        </form>
+          <button class="login-button" type="button" (click)="authenticate()">Login</button>
+        </div>
+  </div>
+<app-footer></app-footer>

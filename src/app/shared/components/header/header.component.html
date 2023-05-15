@@ -1,0 +1,6 @@
+<ul>
+  <li (click)="navigateByUrl('home')">Home</li>
+  <li (click)="navigateByUrl('login')" *ngIf="!user">Login</li>
+  <li (click)="navigateByUrl('products-management')">Products Management</li>
+  <li *ngIf="user" (click)="logout()">Sair</li>
+</ul>

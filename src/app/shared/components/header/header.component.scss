@@ -1,0 +1,11 @@
+header{
+  li {
+    list-style: none;
+    height: 25px;
+  }
+  ul {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+  }
+}
