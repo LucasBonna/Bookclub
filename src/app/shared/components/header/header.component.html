@@ -1,7 +1,13 @@
-<ul>
-  <li (click)="navigateByUrl('home')">Home</li>
-  <li (click)="navigateByUrl('login')" *ngIf="!user">Login</li>
-  <li *ngIf="user && !isAdmin && isBought == true" (click)="navigateByUrl('prize-draw')">Livro do Mes</li>
-  <li *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">Product Management</li>
-  <li *ngIf="user" (click)="logout()">Sair</li>
-</ul>
+<mat-toolbar color="primary">
+  <div class="logo-container">
+    <img src="https://images2.imgbox.com/0c/48/VKTsIToM_o.png" alt="Logo" class="logo">
+  </div>
+  <span>Clube do Livro</span>
+  <span class="spacer"></span>
+  <button mat-raised-button  (click)="navigateByUrl('home')">Home</button>
+  <button mat-raised-button color="primary" *ngIf="!user" (click)="navigateByUrl('login')">Login</button>
+  <button mat-raised-button color="primary" *ngIf="user && !isAdmin && isBought == true" (click)="navigateByUrl('prize-draw')">Livro do Mes</button>
+  <button mat-raised-button color="primary" *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">Product Management</button>
+  <button mat-raised-button color="primary" *ngIf="user" (click)="logout()">Sair</button>
+</mat-toolbar>
+

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from '../features/login/pages/login/login.component';
-import { LoginModule } from '../features/login/login.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule} from '@angular/common/http'
 
 
@@ -15,7 +15,9 @@ import { HttpClientModule} from '@angular/common/http'
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   exports: [
     HeaderComponent,
