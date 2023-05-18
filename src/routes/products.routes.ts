@@ -7,15 +7,15 @@ const router = Router();
 const books: Array<Books> = [
     {
         id: 1,
-        name: 'Notebook S52',
-        image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSe7PDcF0Rc3aVAkQCsyaDJxJRaCrdyYvq00dP-sVOGdToRdMDr662LAPSWskCo2g1Xo8YZqIQ6NRYkrgu1qu0RqCh3CdN3kGlWAmccUaR3etk4IS09YLol8K57bNo7vQAe&usqp=CAc',
-        quantity: 5,
+        name: 'Turma da Monica',
+        image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQIx4VTWfofDdrQ5QgleJLqoLWZt8tlKfAsie1yDoMjMTDbp7jetso3xG6fQ1XzUgEqpZjA-JHidqN7X9QBfXnBwdrURosJR1f-7eLro2iUkhssEzaDybhRA79AVhIM7a4rlEg&usqp=CAc',
+        quantity: 8,
     },
     {
         id: 2,
-        name: 'Notebook S200',
-        image: '',
-        quantity: 5,
+        name: 'Menino Maluquinho',
+        image: 'https://m.media-amazon.com/images/I/911o1h5gIzL.jpg',
+        quantity: 3,
     }
 ];
 
