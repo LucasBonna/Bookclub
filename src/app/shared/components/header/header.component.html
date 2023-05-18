@@ -4,10 +4,12 @@
   </div>
   <span>Clube do Livro</span>
   <span class="spacer"></span>
-  <button mat-raised-button  (click)="navigateByUrl('home')">Home</button>
-  <button mat-raised-button color="primary" *ngIf="!user" (click)="navigateByUrl('login')">Login</button>
-  <button mat-raised-button color="primary" *ngIf="user && !isAdmin && isBought == true" (click)="navigateByUrl('prize-draw')">Livro do Mes</button>
-  <button mat-raised-button color="primary" *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">Product Management</button>
-  <button mat-raised-button color="primary" *ngIf="user" (click)="logout()">Sair</button>
+  <div class="button-container">
+    <button mat-raised-button (click)="navigateByUrl('home')">Home</button>
+    <button mat-raised-button *ngIf="!user" (click)="navigateByUrl('login')">Login</button>
+    <button mat-raised-button *ngIf="user && !isAdmin && isBought == true" (click)="navigateByUrl('prize-draw')">Livro do Mes</button>
+    <button mat-raised-button *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">Product Management</button>
+    <button mat-raised-button *ngIf="user" (click)="logout()">Sair</button>
+  </div>
 </mat-toolbar>
 

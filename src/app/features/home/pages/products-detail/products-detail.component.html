@@ -1,14 +1,20 @@
 <app-header></app-header>
-<div ng-if="subscription">
-  <div *ngIf="this.bought == false" class="produtos-showcase">
-    <h1>Descricao: {{ subscription?.description }}</h1>
-    <h2>Preco: {{ subscription?.price }}</h2>
-    <button class="buy-subscription" (click)="buySubscription()">Comprar</button>
-  </div>
-  <div *ngIf="this.bought == true">
-    <h1>VOCE JA COMPROU UMA INSCRIÇÃO</h1>
-    <h2>Clique no botao abaixo se deseja cancelar a sua inscrição</h2>
-    <button class="cancel-subscription" (click)="cancelSubscription()">Cancelar Inscrição</button>
+
+<div class="product-detail">
+  <div class="product-detail-content">
+    <div ng-if="subscription">
+      <div *ngIf="!bought" class="produtos-showcase">
+        <h1>Descrição: {{ subscription?.description }}</h1>
+        <h2>Preço: {{ subscription?.price | currency:'BRL' }}</h2>
+        <button class="buy-subscription" (click)="buySubscription()">Comprar</button>
+      </div>
+      <div *ngIf="bought">
+        <h1>VOCÊ COMPROU SUA INSCRIÇÃO EM {{ getClickedDate() }}</h1>
+        <h2>Clique no botão abaixo se deseja cancelar a sua inscrição</h2>
+        <button class="cancel-subscription" (click)="cancelSubscription()">Cancelar Inscrição</button>
+      </div>
+    </div>
   </div>
 </div>
+
 <app-footer></app-footer>

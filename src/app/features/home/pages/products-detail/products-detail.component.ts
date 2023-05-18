@@ -38,16 +38,38 @@ ngOnInit(): void {
 
 buySubscription() {
   const user = sessionStorage.getItem('user');
-  if(user) {
-    localStorage.setItem('bought', (user))
+  if (user) {
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const clickedDate = `${day}/${month}`;
+    localStorage.setItem('bought', user);
+    localStorage.setItem('clickedDate', clickedDate);
     window.location.reload();
   } else {
-    alert('Você precisa estar logado para comprar uma assinatura!')
+    alert('Você precisa estar logado para comprar uma assinatura!');
   }
 }
 
+getClickedDate(): string {
+  const clickedDate = localStorage.getItem('clickedDate');
+  return clickedDate ? clickedDate : '';
+}
+
+
+// buySubscription() {
+//   const user = sessionStorage.getItem('user');
+//   if(user) {
+//     localStorage.setItem('bought', (user))
+//     window.location.reload();
+//   } else {
+//     alert('Você precisa estar logado para comprar uma assinatura!')
+//   }
+// }
+
 cancelSubscription() {
   localStorage.removeItem('bought')
+  localStorage.removeItem('clickedDate');
   window.location.reload();
 }
 
