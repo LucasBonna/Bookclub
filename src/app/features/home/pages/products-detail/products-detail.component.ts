@@ -57,16 +57,6 @@ getClickedDate(): string {
 }
 
 
-// buySubscription() {
-//   const user = sessionStorage.getItem('user');
-//   if(user) {
-//     localStorage.setItem('bought', (user))
-//     window.location.reload();
-//   } else {
-//     alert('Você precisa estar logado para comprar uma assinatura!')
-//   }
-// }
-
 cancelSubscription() {
   localStorage.removeItem('bought')
   localStorage.removeItem('clickedDate');
