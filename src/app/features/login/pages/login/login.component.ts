@@ -9,10 +9,8 @@ import { UsersService } from 'src/app/shared/services/users.service';
 })
 export class LoginComponent implements OnInit {
 
-id: number = 0;
 email: string = '';
 password: string = '';
-isAdmin: boolean = true;
 error = false;
 
 constructor (
@@ -24,18 +22,18 @@ ngOnInit(): void {
 }
 
 authenticate() {
-  const user = this.usersService.getUserByEmailAndPassword(this.email, this.password)
-  if(user) {
-    sessionStorage.setItem('user', JSON.stringify(user));
-    this.router.navigateByUrl('home')
-  } else {
-    this.error = true;
-  }
-  const isAdmin = this.usersService.isUserAdmin(this.isAdmin)
-  if(isAdmin && isAdmin == user) {
-  sessionStorage.setItem('isAdmin', JSON.stringify(isAdmin));
-};
+  this.usersService.getUserByEmailAndPassword(this.email, this.password).subscribe(response => {
+    sessionStorage.setItem('user', JSON.stringify(response.user));
+    this.router.navigateByUrl('home');
+  },
+  error => {
+    this.error = true
+  });
 }
 
+
+navigateToSignup() {
+  this.router.navigateByUrl('signup');
+}
 
 }

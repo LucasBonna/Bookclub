@@ -5,6 +5,7 @@ import { LoginComponent } from './features/login/pages/login/login.component';
 import { ProductsDetailComponent } from './features/home/pages/products-detail/products-detail.component';
 import { ProductManagementComponent } from './features/admin/pages/product-management/product-management.component';
 import { PrizeDrawComponent } from './features/home/pages/prize-draw/prize-draw.component';
+import { SignupComponent } from './features/login/pages/signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'products-detail/:subscriptionId', component: ProductsDetailComponent },
   { path: 'product-management', component: ProductManagementComponent},
-  { path: 'prize-draw', component: PrizeDrawComponent}
+  { path: 'prize-draw', component: PrizeDrawComponent},
+  { path: 'signup', component: SignupComponent},
 ];
 
 

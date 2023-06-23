@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="signup-container">
+    <div class="signup-form-container">
+      <h3>Preencha todos os campos para se cadastrar</h3>
+      <form class="signup-form">
+        <div class="form-field">
+          <input type="text" [(ngModel)]="name" name="name" required>
+          <label for="name">Nome</label>
+        </div>
+        <div class="form-field">
+          <input type="email" [(ngModel)]="email" name="email" required>
+          <label for="email">E-mail</label>
+        </div>
+        <div class="form-field">
+          <input type="password" [(ngModel)]="password" name="password" required>
+          <label for="password">Senha</label>
+        </div>
+        <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+        <div class="button-container">
+        <button mat-flat-button color="primary" type="button" (click)="createUser()">Registrar</button>
+        </div>
+        <div class="button-container">
+        <button mat-flat-button color="primary" type="button" (click)="navigateToLogin()">Já possui uma conta? Faça login</button>
+        </div>
+      </form>
+      <div class="success-message" *ngIf="success">
+        Cadastro realizado com sucesso!
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
