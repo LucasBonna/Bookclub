@@ -1,69 +1,115 @@
 import { Router, Request, Response } from 'express';
 import { Books } from '../models/product.model';
-
+import mysql, { Pool, OkPacket, RowDataPacket } from 'mysql2';
 
 const router = Router();
 
-const books: Array<Books> = [
-    {
-        id: 1,
-        name: 'Turma da Monica',
-        image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQIx4VTWfofDdrQ5QgleJLqoLWZt8tlKfAsie1yDoMjMTDbp7jetso3xG6fQ1XzUgEqpZjA-JHidqN7X9QBfXnBwdrURosJR1f-7eLro2iUkhssEzaDybhRA79AVhIM7a4rlEg&usqp=CAc',
-        quantity: 8,
-    },
-    {
-        id: 2,
-        name: 'Menino Maluquinho',
-        image: 'https://m.media-amazon.com/images/I/911o1h5gIzL.jpg',
-        quantity: 3,
+const pool = mysql.createPool({
+    host: '127.0.0.1',      
+    user: 'Lucas',    
+    password: '12345',  
+    database: 'db_clubedolivro',
+});
+
+const connection = pool.promise();
+
+router.get('/all', async (req: Request, res: Response) => {
+    // Query para buscar todos os usuários no banco de dados
+    const query = 'SELECT * FROM books';
+
+    try {
+        const [results, _] = await connection.query(query);
+        res.status(200).json(results);
+    } catch (err) {
+        console.error('Erro ao executar a consulta:', err);
+        res.status(500).json({ message: 'Erro ao obter produtos.' });
     }
-];
-
-router.get('/all', (req: Request, res: Response) => {
-    res.send(books);
 });
 
-router.get('/:id', (req: Request, res: Response) => {
-    res.send(books.find((Book) => Book.id === parseInt(req.params.id)));
-});
-
-router.post('/create', (req: Request, res: Response) => {
-    const Book = req.body;
-    Book.id = (books[(books.length - 1)].id + 1);
-    books.push(Book);
-    res.status(201).send({ message: 'Produto criado com sucesso!' });
-
-});
-
-router.put('/updateQuantity/:id', (req: Request, res: Response) => {
+router.get('/:id', async (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
-    const quantity = req.body.quantity;
-  
-    const bookIndex = books.findIndex((book) => book.id === id);
-    if (bookIndex === -1) {
-      res.status(404).send({ message: 'Livro não encontrado.' });
-      return;
+
+    // Query para buscar um usuário específico no banco de dados
+    const query = `SELECT * FROM books WHERE id = ?`;
+    const values = [id];
+
+    try {
+        const [results, _] = await connection.query(query, values);
+
+        if (Array.isArray(results)) {
+            if (results.length > 0) {
+                const user = results[0];
+                res.status(200).json(user);
+            } else {
+                res.status(404).json({ message: 'Produto não encontrado.' });
+            }
+        } else {
+            // Handle the case when the query returns an OkPacket
+            res.status(404).json({ message: 'Produto não encontrado.' });
+        }
+    } catch (err) {
+        console.error('Erro ao executar a consulta:', err);
+        res.status(500).json({ message: 'Erro ao obter produto.' });
     }
-  
-    books[bookIndex].quantity = quantity;
-    res.status(200).send({ message: 'Quantidade do livro atualizada com sucesso.' });
-  });
-
-router.put('/update/:id', (req: Request, res: Response) => {
-    const Book = req.body;
-    const id = parseInt(req.params.id);
-    const booksIndex = books.findIndex((books) => books.id === id);
-    if(booksIndex === -1) res.status(404).send({ message: 'Produto não encontrado para fazer atualização!' });
-    Book[booksIndex] = books;
-    res.status(200).send({ message: 'Produto atualizado com sucesso!' });
 });
 
-router.delete('/remove/:id', (req: Request, res: Response) => {
+router.post('/createProduct', async (req: Request, res: Response) => {
+    const { id, isbn, name, autor, editora, quantity, image } = req.body;
+
+    try {
+        // Verificar se o livro já existe no sistema
+        const isbnExistsQuery = `SELECT * FROM books WHERE isbn = ?`;
+        const isbnExistsValues = [isbn];
+
+        const [isbnResults, _] = await connection.query(isbnExistsQuery, isbnExistsValues);
+
+        if (Array.isArray(isbnResults)) {
+            if (isbnResults.length > 0) {
+                res.status(409).send({ message: 'O isbn informado já está registrado.' });
+                return;
+            }
+        } else {
+            // Handle the case when the query returns an OkPacket
+            res.status(409).send({ message: 'O isbn informado já está registrado.' });
+            return;
+        }
+
+        // Inserir o usuário ao banco de dados
+        const insertQuery = `INSERT INTO books (isbn, name, autor, editora, quantity, image) VALUES (?, ?, ?, ?, ?, ?)`;
+        const insertValues = [isbn, name, autor, editora, quantity, image];
+
+        await connection.query(insertQuery, insertValues);
+        res.status(201).send({ message: 'Produto criado com sucesso!' });
+    } catch (err) {
+        console.error('Erro ao executar a consulta', err);
+        res.status(500).json({ message: 'Erro ao criar o produto.' });
+    }
+});
+
+router.delete('/remove/:id', async (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
-    const booksIndex = books.findIndex((books) => books.id === id);
-    if(booksIndex === -1) res.status(404).send({ message: 'Produto não encontrado para fazer a remoção!' });
-    books.splice(booksIndex, 1);
-    res.status(200).send({ message: 'Produto excluído com sucesso!' });
+
+    try {
+        // Verificar se o livro existe antes de excluí-lo
+        const bookExistsQuery = 'SELECT * FROM books WHERE id = ?';
+        const bookExistsValues = [id];
+        const [bookExistsResults, _] = await connection.query(bookExistsQuery, bookExistsValues);
+
+        if (Array.isArray(bookExistsResults) && bookExistsResults.length === 0) {
+            res.status(404).json({ message: 'O livro não foi encontrado.' });
+            return;
+        }
+
+        // Excluir o livro do banco de dados
+        const deleteQuery = 'DELETE FROM books WHERE id = ?';
+        const deleteValues = [id];
+        await connection.query(deleteQuery, deleteValues);
+
+        res.status(200).json({ message: 'Livro excluído com sucesso!' });
+    } catch (err) {
+        console.error('Erro ao executar a consulta', err);
+        res.status(500).json({ message: 'Erro ao excluir o livro.' });
+    }
 });
 
 export default router;

@@ -1,44 +1,39 @@
 import { Router } from 'express';
 import { Request, Response } from 'express';
-import mysql, { Pool, OkPacket } from 'mysql2';
+import mysql, { Pool, OkPacket, RowDataPacket } from 'mysql2';
 
 const router = Router();
 
 const pool = mysql.createPool({
     host: '127.0.0.1',      
-    user: 'lucas',    
-    password: 'Peach217',  
+    user: 'Lucas',    
+    password: '12345',  
     database: 'db_clubedolivro',
 });
 
 const connection = pool.promise();
 
-
 router.post('/authenticate', async (req, res) => {
     const { email, password } = req.body;
+  
     // Query para buscar o usuário no banco de dados
-    const query = `SELECT * FROM users WHERE email = ? AND password = ?`;
+    const query = `SELECT id, phone, name, email, permission FROM users WHERE email = ? AND password = ?`;
     const values = [email, password];
-
+  
     try {
-        const [results, _] = await connection.query(query, values);
-
-        if (Array.isArray(results)) {
-            if (results.length > 0) {
-                const user = results[0];
-                res.status(200).json({ message: 'Autenticação de usuário completada com sucesso!' });
-            } else {
-                res.status(401).json({ message: 'Autenticação de usuário não concluída.' });
-            }
-        } else {
-            // Handle the case when the query returns an OkPacket
-            res.status(401).json({ message: 'Autenticação de usuário não concluída.' });
-        }
+      const [results, _] = await connection.query<RowDataPacket[]>(query, values);
+  
+      if (Array.isArray(results) && results.length > 0) {
+        const user = results[0];
+        res.status(200).json({ message: 'Autenticação de usuário completada com sucesso!', user });
+      } else {
+        res.status(401).json({ message: 'Autenticação de usuário não concluída.' });
+      }
     } catch (err) {
-        console.error('Erro ao executar a consulta:', err);
-        res.status(500).json({ message: 'Erro ao autenticar usuário.' });
+      console.error('Erro ao executar a consulta:', err);
+      res.status(500).json({ message: 'Erro ao autenticar usuário.' });
     }
-});
+  });
 
 router.get('/all', async (req: Request, res: Response) => {
     // Query para buscar todos os usuários no banco de dados
