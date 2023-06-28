@@ -8,7 +8,7 @@
     <button mat-raised-button (click)="navigateByUrl('home')">Home</button>
     <button mat-raised-button *ngIf="!user" (click)="navigateByUrl('login')">Login</button>
     <button mat-raised-button *ngIf="!user" (click)="navigateByUrl('signup')">Sign Up</button>
-    <button mat-raised-button *ngIf="user && !isAdmin && isBought == true" (click)="navigateByUrl('prize-draw')">Livro do Mes</button>
+    <button mat-raised-button *ngIf="user && !isAdmin"  (click)="navigateByUrl('prize-draw')">Livro do Mes</button>
     <button mat-raised-button *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">Product Management</button>
     <button mat-raised-button *ngIf="user" (click)="logout()">Sair</button>
   </div>

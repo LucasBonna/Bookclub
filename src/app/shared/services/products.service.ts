@@ -9,67 +9,34 @@ import { Subscription } from 'src/app/features/home/models/subscription.model';
 })
 export class ProductsService {
 
-  baseUrl: string = 'http://localhost:3000';
-
-  options = {
-    headers: {
-      'content-type': 'application/json'
-    }
-  };
-
-  subscriptions: Array<Subscription> = [
-    {
-      id: 1,
-      description: 'Clubinho',
-      price: 59
-      }
-  ]
-
-    books: Array<Books> = []
-
+  baseUrl: string = 'http://localhost:3000/products';
 
 
   constructor(private HttpClient: HttpClient) { }
 
   getBooks() {
-    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/products/all', this.options);
+    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/all');
   }
 
-  getSubscriptions() {
-    return this.subscriptions;
+  getBookById(id: number) {
+    return this.HttpClient.get<Books>(this.baseUrl + `/${id}`);
   }
 
-  getById(id: number) {
-    return this.subscriptions.find((subscription) => subscription.id === id );
-  }
-
-
-  getBookById(id: number): Observable<Books> {
-    return this.HttpClient.get<Books>(this.baseUrl + `/products/${id}`, this.options);
-  }
-  create(books: Books) {
-    return this.HttpClient.post(this.baseUrl + '/products/create', books, this.options);
+  createProducts(books: Books) {
+    return this.HttpClient.post(this.baseUrl + '/createProduct', books);
   }
 
   deleteBook(id: number) {
-    return this.HttpClient.delete(this.baseUrl + '/products/remove/' + id, this.options);
+    return this.HttpClient.delete(this.baseUrl + '/remove/' + id);
   }
 
   updateStock(book: Books, quantity: number) {
     const updatedBook = { ...book, quantity };
-    return this.HttpClient.put(this.baseUrl + '/products/updateQuantity/' + book.id, updatedBook, this.options);
+    return this.HttpClient.put(this.baseUrl + '/updateQuantity/' + book.id, updatedBook);
   }
 
 
   update(book: Partial<Books>) {
-    return this.HttpClient.put(this.baseUrl + '/products/update/' + book.id, book, this.options);
-  }
-
-  generateNextId() {
-    return this.books[(this.books.length - 1)].id + 1;
-  }
-
-  getBookId() {
-    return this.books.find((books) => books.id)
+    return this.HttpClient.put(this.baseUrl + '/update/' + book.id, book);
   }
 }

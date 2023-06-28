@@ -17,7 +17,6 @@ export class UsersService {
 
   getUserByEmailAndPassword(email: string, password: string) {
     return this.http.post<{ message: string, user: User | undefined }>(`${this.baseUrl}/authenticate`, { email , password });
-
   }
 
 

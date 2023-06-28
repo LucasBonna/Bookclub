@@ -22,13 +22,15 @@ ngOnInit(): void {
 }
 
 authenticate() {
-  this.usersService.getUserByEmailAndPassword(this.email, this.password).subscribe(response => {
-    sessionStorage.setItem('user', JSON.stringify(response.user));
-    this.router.navigateByUrl('home');
-  },
-  error => {
-    this.error = true
-  });
+  this.usersService.getUserByEmailAndPassword(this.email, this.password).subscribe(
+    response => {
+      sessionStorage.setItem('user', JSON.stringify(response.user));
+      this.router.navigateByUrl('home');
+    },
+    error => {
+      this.error = true;
+    }
+  );
 }
 
 

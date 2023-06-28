@@ -14,23 +14,14 @@ constructor(
   private router: Router) { }
 
 user?: User;
-isAdmin?: User;
-isBought?: boolean;
+isAdmin: boolean = false;
+
 
 ngOnInit(): void {
-  const userSessionStorage = sessionStorage.getItem('user');
-  if(userSessionStorage) {
-    this.user = JSON.parse(userSessionStorage);
-  };
-  const adminSessionStorage = sessionStorage.getItem('isAdmin');
-  if(adminSessionStorage) {
-  this.isAdmin = JSON.parse(adminSessionStorage)
-  }
-  const isboughtLocalStorage = localStorage.getItem('bought')
-  if( isboughtLocalStorage == userSessionStorage) {
-    this.isBought = true;
-  } else {
-    this.isBought = false;
+  const userSession = sessionStorage.getItem('user')
+  if(userSession) {
+    this.user = JSON.parse(userSession);
+    this.isAdmin = this.user?.permission === 2;
   }
 }
 
@@ -39,7 +30,7 @@ navigateByUrl(url: string) {
 }
 
 logout() {
-  sessionStorage.clear();
+  sessionStorage.removeItem('user');
   this.router.navigateByUrl('login')
 }
 

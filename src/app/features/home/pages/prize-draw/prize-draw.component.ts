@@ -37,20 +37,5 @@ export class PrizeDrawComponent implements OnInit {
     }
   }
 
-  confirmBook(book: Books): void {
-    const item: BookItem = {
-      id: book.id,
-      name: book.name,
-      image: book.image,
-      quantity: book.quantity
-    };
-    localStorage.setItem('bookChosen', JSON.stringify(item));
-    this.book = item;
-    this.chosen = true;
-    book.quantity--;
-    this.productsService.updateStock(book, book.quantity).subscribe(() => {
-      console.log(`Quantidade ${book.quantity} do livro ${book.name} atualizada.`)
-    });
-  }
 }
 

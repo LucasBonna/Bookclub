@@ -31,7 +31,6 @@ ngOnInit(): void {
   };
   this.activatedRoute.params.subscribe((params) => {
     const id = parseInt(params['subscriptionId']);
-    this.subscription = this.productsService.getById(id);
     const user = sessionStorage.getItem('user');
     const bought = localStorage.getItem('bought');
     if(user == bought) {
