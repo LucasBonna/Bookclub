@@ -18,56 +18,9 @@ user?: User;
 
 bought?: boolean;
 
-constructor(
-  private activatedRoute: ActivatedRoute,
-  private router: Router,
-  private productsService: ProductsService,
-  private usersService: UsersService) {}
+constructor( private router: Router ) {}
 
 ngOnInit(): void {
-  const userSessionStorage = sessionStorage.getItem('user');
-  if(userSessionStorage) {
-    this.user = JSON.parse(userSessionStorage);
-  };
-  this.activatedRoute.params.subscribe((params) => {
-    const id = parseInt(params['subscriptionId']);
-    const user = sessionStorage.getItem('user');
-    const bought = localStorage.getItem('bought');
-    if(user == bought) {
-      this.bought = true
-    } else {
-      this.bought = false
-    }
-  })
-
-}
-
-
- buySubscription() {
-   const user = sessionStorage.getItem('user');
-   if (user) {
-     const currentDate = new Date();
-     const day = currentDate.getDate();
-     const month = currentDate.getMonth() + 1;
-     const clickedDate = `${day}/${month}`;
-     localStorage.setItem('bought', (user));
-     localStorage.setItem('clickedDate', clickedDate);
-     window.location.reload();
-   } else {
-     alert('Você precisa estar logado para comprar uma assinatura!');
-   }
-}
-
-getClickedDate(): string {
-  const clickedDate = localStorage.getItem('clickedDate');
-  return clickedDate ? clickedDate : '';
-}
-
-
-cancelSubscription() {
-  localStorage.removeItem('bought')
-  localStorage.removeItem('clickedDate');
-  window.location.reload();
 }
 
 }

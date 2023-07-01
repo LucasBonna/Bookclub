@@ -11,9 +11,6 @@ import { Books } from '../../models/books.model';
 })
 export class SubscriptionsComponent implements OnInit {
 
-// subscriptions: Array<Subscription> = this.productsService.getSubscriptions();
-
-
 
 constructor (
   private productsService: ProductsService,

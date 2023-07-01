@@ -39,4 +39,8 @@ export class ProductsService {
   update(book: Partial<Books>) {
     return this.HttpClient.put(this.baseUrl + '/update/' + book.id, book);
   }
+
+  getPlanos() {
+    return this.HttpClient.get<Array<Subscription>>(this.baseUrl + 'planos/all' );
+  }
 }
