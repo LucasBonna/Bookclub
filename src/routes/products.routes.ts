@@ -1,5 +1,4 @@
 import { Router, Request, Response } from 'express';
-import { Books } from '../models/product.model';
 import mysql, { Pool, OkPacket, RowDataPacket } from 'mysql2';
 
 const router = Router();
@@ -113,5 +112,3 @@ router.delete('/remove/:id', async (req: Request, res: Response) => {
 });
 
 export default router;
-
-// omg
