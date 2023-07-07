@@ -17,7 +17,6 @@ interface BookItem {
 export class PrizeDrawComponent implements OnInit {
   books: Array<Books> = [];
   book?: Books;
-  chosen?: boolean;
 
   constructor(
     private productsService: ProductsService,
@@ -28,8 +27,6 @@ export class PrizeDrawComponent implements OnInit {
       this.books = books;
     });
 
-    const checkChosen = localStorage.getItem('bookChosen');
-    this.chosen = checkChosen ? true : false;
 
     const bookItem = JSON.parse(localStorage.getItem('bookChosen') || '{}');
     if (bookItem.id && bookItem.name && bookItem.image && bookItem.quantity) {
