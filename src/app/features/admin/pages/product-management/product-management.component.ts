@@ -49,7 +49,6 @@ export class ProductManagementComponent implements OnInit {
   onSubmit() {
     const bookValue: any = this.bookForm.value;
 
-    // Verificar se o livro já existe
     const livroExistente = this.books.some(book => book.isbn === bookValue.isbn);
 
     if (livroExistente) {

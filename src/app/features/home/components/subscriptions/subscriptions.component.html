@@ -1,12 +1,12 @@
 <div class="container">
-  <!-- <div class="produtos-showcase" *ngFor="let subscription of subscriptions">
+  <div class="produtos-showcase" *ngFor="let subscription of subs">
     <div class="image-container">
       <img src="https://images2.imgbox.com/0c/48/VKTsIToM_o.png" alt="Imagem">
     </div>
     <div class="content-container">
       <h1>Descricao: {{ subscription.description }}</h1>
       <h2>Preco: {{ subscription.price | currency:'BRL' }}</h2>
-      <button class="product-details" (click)="productDetails(subscription.id)">Detalhes</button>
+      <button class="product-details" (click)="productDetails(subscription)">Detalhes</button>
     </div>
-  </div> -->
+  </div>
 </div>

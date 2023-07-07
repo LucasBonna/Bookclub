@@ -6,6 +6,7 @@ import { ProductsDetailComponent } from './features/home/pages/products-detail/p
 import { ProductManagementComponent } from './features/admin/pages/product-management/product-management.component';
 import { PrizeDrawComponent } from './features/home/pages/prize-draw/prize-draw.component';
 import { SignupComponent } from './features/login/pages/signup/signup.component';
+import { PaymentConfirmationComponent } from './features/admin/pages/payment-confirmation/payment-confirmation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'product-management', component: ProductManagementComponent},
   { path: 'prize-draw', component: PrizeDrawComponent},
   { path: 'signup', component: SignupComponent},
+  { path: 'payment-confirmation', component: PaymentConfirmationComponent},
 ];
 
 

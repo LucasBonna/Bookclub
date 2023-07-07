@@ -2,14 +2,18 @@
 
 <div class="product-detail">
   <div class="product-detail-content">
-    <div ng-if="subscription">
-      <div *ngIf="this.bought == false" class="produtos-showcase">
-        <h1>Descrição: {{ subscription?.description }}</h1>
-        <h2>Preço: {{ subscription?.price | currency:'BRL' }}</h2>
+    <div *ngIf="subscription">
+      <div class="produtos-showcase">
+        <h1>Descrição: {{ subscription.description }}</h1>
+        <h2>Preço: {{ subscription.price | currency:'BRL' }}</h2>
       </div>
-      <div *ngIf="this.bought == true">
-        <h2>Clique no botão abaixo se deseja cancelar a sua inscrição</h2>
+      <div>
+        <button *ngIf="isLoggedIn() && !hasActiveSubscription" (click)="navigateToPurchase()">Compre aqui!</button>
+        <button *ngIf="!isLoggedIn()" (click)="navigateToLogin()">Faça o login para comprar!</button>
       </div>
+    </div>
+    <div *ngIf="hasActiveSubscription">
+      <p>Você já possui uma assinatura ativa desse tipo.</p>
     </div>
   </div>
 </div>
