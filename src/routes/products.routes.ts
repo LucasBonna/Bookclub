@@ -111,4 +111,64 @@ router.delete('/remove/:id', async (req: Request, res: Response) => {
     }
 });
 
+router.post('/edit/:id', async (req: Request, res: Response) => {
+    const id = parseInt(req.params.id);
+    const { isbn, name, autor, editora, quantity, image } = req.body;
+
+    try {
+        // Verificar se o livro existe antes de alterá-lo
+        const bookExistsQuery = 'SELECT * FROM books WHERE id = ?';
+        const bookExistsValues = [id];
+        const [bookExistsResults, _] = await connection.query(bookExistsQuery, bookExistsValues);
+
+        if (Array.isArray(bookExistsResults) && bookExistsResults.length === 0) {
+            res.status(404).json({ message: 'O livro não foi encontrado.' });
+            return;
+        }
+
+        // Construir a query de atualização dinamicamente
+        let updateQuery = 'UPDATE books SET';
+        const updateValues: any[] = [];
+
+        if (isbn) {
+            updateQuery += ' isbn = ?,';
+            updateValues.push(isbn);
+        }
+        if (name) {
+            updateQuery += ' name = ?,';
+            updateValues.push(name);
+        }
+        if (autor) {
+            updateQuery += ' autor = ?,';
+            updateValues.push(autor);
+        }
+        if (editora) {
+            updateQuery += ' editora = ?,';
+            updateValues.push(editora);
+        }
+        if (quantity) {
+            updateQuery += ' quantity = ?,';
+            updateValues.push(quantity);
+        }
+        if (image) {
+            updateQuery += ' image = ?,';
+            updateValues.push(image);
+        }
+
+        // Remover a vírgula extra do final da query
+        updateQuery = updateQuery.slice(0, -1);
+
+        // Adicionar o valor do ID ao array de valores
+        updateValues.push(id);
+
+        // Executar a query de atualização
+        await connection.query(updateQuery + ' WHERE id = ?', updateValues);
+
+        res.status(200).json({ message: 'Livro atualizado com sucesso!' });
+    } catch (err) {
+        console.error('Erro ao executar a consulta', err);
+        res.status(500).json({ message: 'Erro ao atualizar o livro.' });
+    }
+});
+
 export default router;
