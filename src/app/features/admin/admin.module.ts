@@ -4,6 +4,7 @@ import { ProductManagementComponent } from './pages/product-management/product-m
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaymentConfirmationComponent } from './pages/payment-confirmation/payment-confirmation.component';
+import { ProductEditingComponent } from './pages/product-editing/product-editing.component';
 
 
 
@@ -11,6 +12,7 @@ import { PaymentConfirmationComponent } from './pages/payment-confirmation/payme
   declarations: [
     ProductManagementComponent,
     PaymentConfirmationComponent,
+    ProductEditingComponent,
   ],
   imports: [
     CommonModule,

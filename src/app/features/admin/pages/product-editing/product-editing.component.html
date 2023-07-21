@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container">
+  <h3>Editar Produto</h3>
+  <form class="product-editing-form" *ngIf="book" [formGroup]="editingForm">
+    <div class="form-field">
+      <label class="label-input" for="isbn">Isbn do Livro:</label>
+      <input formControlName="isbn" type="text" placeholder="Digite Aqui o Isbn do Livro" id="isbn">
+    </div>
+    <div class="form-field">
+      <label class="label-input" for="name">Nome do Livro:</label>
+      <input formControlName="name" type="text" placeholder="Digite Aqui o Nome do Livro" id="name">
+    </div>
+    <div class="form-field">
+      <label class="label-input" for="autor">Autor do Livro:</label>
+      <input formControlName="autor" type="text" placeholder="Digite Aqui o Autor do Livro" id="autor">
+    </div>
+    <div class="form-field">
+      <label class="label-input" for="editora">Editora do Livro:</label>
+      <input formControlName="editora" type="text" placeholder="Digite Aqui a Editora do Livro" id="editora">
+    </div>
+    <div class="form-field">
+      <label class="label-input" for="quantity">Quantidade:</label>
+      <input formControlName="quantity" type="number" placeholder="Digite aqui a Quantidade do Livro" id="quantity">
+    </div>
+    <div class="form-field">
+      <label class="label-input" for="image">Imagem:</label>
+      <input formControlName="image" type="text" placeholder="Coloque a Url da Imagem do Livro" id="image">
+    </div>
+    <div class="form-button">
+      <button class="updateProduct" type="submit" (click)="onSubmit()" [disabled]="editingForm.invalid">Salvar Alterações</button>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>

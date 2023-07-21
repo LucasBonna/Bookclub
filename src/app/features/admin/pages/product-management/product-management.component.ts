@@ -1,11 +1,9 @@
-import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Books } from 'src/app/features/home/models/books.model';
 import { ProductsService } from 'src/app/shared/services/products.service';
-import { UsersService } from 'src/app/shared/services/users.service';
 
 @Component({
   templateUrl: './product-management.component.html',
@@ -59,5 +57,9 @@ export class ProductManagementComponent implements OnInit {
     this.productsService.createProducts(bookValue).subscribe((res) => {
       window.location.reload();
     });
+  }
+
+  editBook(bookId: number) {
+    this.router.navigate(['product-editing', bookId]);
   }
 }

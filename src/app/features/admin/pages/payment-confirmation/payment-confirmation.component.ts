@@ -29,10 +29,10 @@ export class PaymentConfirmationComponent implements OnInit {
     const timeZone = 'America/Sao_Paulo';
 
     const startDate = format(zonedTimeToUtc(new Date(), timeZone), 'yyyy-MM-dd HH:mm:ss');
-    const endDate = format(zonedTimeToUtc(new Date(), timeZone), 'yyyy-MM-dd HH:mm:ss')
+    const endDate = format(addMonths(zonedTimeToUtc(new Date(), timeZone), 1), 'yyyy-MM-dd HH:mm:ss');
     const subscriptionData = {
       user_id: user.id,
-      subscription_type: 1, // a ser alterado.
+      subscription_type: this.getSubscriptionTypeFromUrl(),
       start_date: startDate,
       end_date: endDate,
       status: 'active',
@@ -47,5 +47,16 @@ export class PaymentConfirmationComponent implements OnInit {
       }
     );
   }
+
+  getSubscriptionTypeFromUrl(): number {
+    const urlParts = this.router.url.split('/');
+    const urlLastPart = urlParts[urlParts.length - 1];
+    return parseInt(urlLastPart, 10);
+  }
+
+  navigateToHome() {
+    this.router.navigateByUrl('home')
+  }
+
 
 }

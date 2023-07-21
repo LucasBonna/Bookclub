@@ -30,9 +30,8 @@ export class ProductsService {
     return this.HttpClient.delete(this.baseUrl + '/remove/' + id);
   }
 
-  updateStock(book: Books, quantity: number) {
-    const updatedBook = { ...book, quantity };
-    return this.HttpClient.put(this.baseUrl + '/updateQuantity/' + book.id, updatedBook);
+  bookEditing(book: Books): Observable<any> {
+    return this.HttpClient.post(this.baseUrl + '/edit/' + book.id, book)
   }
 
 

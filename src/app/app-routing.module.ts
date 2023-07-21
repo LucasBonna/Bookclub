@@ -7,6 +7,7 @@ import { ProductManagementComponent } from './features/admin/pages/product-manag
 import { PrizeDrawComponent } from './features/home/pages/prize-draw/prize-draw.component';
 import { SignupComponent } from './features/login/pages/signup/signup.component';
 import { PaymentConfirmationComponent } from './features/admin/pages/payment-confirmation/payment-confirmation.component';
+import { ProductEditingComponent } from './features/admin/pages/product-editing/product-editing.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'product-management', component: ProductManagementComponent},
   { path: 'prize-draw', component: PrizeDrawComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'payment-confirmation', component: PaymentConfirmationComponent},
+  { path: 'payment-confirmation/:subscriptionType', component: PaymentConfirmationComponent},
+  { path: 'product-editing/:id', component: ProductEditingComponent},
 ];
 
 

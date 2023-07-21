@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.payment-confirmation {
+  max-width: 400px;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #8e54e9, #4776e6);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+.payment-confirmation h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.payment-confirmation p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.payment-confirmation button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(to bottom right, #4e1ac1, #c86dd7);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.payment-confirmation button:hover {
+  background: linear-gradient(to bottom right, #2d0884, #8e54e9);
+}
+
+.payment-confirmation .back-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(to bottom right, #4e1ac1, #c86dd7);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.payment-confirmation .back-button:hover {
+  background: linear-gradient(to bottom right, #2d0884, #8e54e9);
+}

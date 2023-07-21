@@ -109,19 +109,38 @@
   font-size: 14px;
 }
 
-.delete-product {
+.product-buttons {
+  display: flex;
+  align-items: center;
   margin-top: 10px;
+}
+
+.delete-product,
+.edit-product {
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  background: linear-gradient(to bottom right, #d9534f, #f77473);
-  color: #fff;
   font-weight: bold;
   cursor: pointer;
 }
 
+.delete-product {
+  background: linear-gradient(to bottom right, #d9534f, #f77473);
+  color: #fff;
+  margin-right: 10px;
+}
+
 .delete-product:hover {
   background: linear-gradient(to bottom right, #a62623, #d9534f);
+}
+
+.edit-product {
+  background: linear-gradient(to bottom right, #64a651, #4caf50);
+  color: #fff;
+}
+
+.edit-product:hover {
+  background: linear-gradient(to bottom right, #387d39, #64a651);
 }
 
 .livro-existente {
