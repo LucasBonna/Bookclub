@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsDetailComponent } from './pages/products-detail/products-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrizeDrawComponent } from './pages/prize-draw/prize-draw.component';
+import { BookSelectionComponent } from './pages/book-selection/book-selection.component';
 
 
 
@@ -14,7 +15,8 @@ import { PrizeDrawComponent } from './pages/prize-draw/prize-draw.component';
     SubscriptionsComponent,
     HomeComponent,
     ProductsDetailComponent,
-    PrizeDrawComponent
+    PrizeDrawComponent,
+    BookSelectionComponent
   ],
   imports: [
     CommonModule,

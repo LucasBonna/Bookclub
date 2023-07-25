@@ -28,6 +28,10 @@
         <label class="label-input" for="image">Imagem:</label>
         <input formControlName="image" type="text" placeholder="Coloque a Url da Imagem do Livro" id="image">
       </div>
+      <div class="form-field">
+        <label class="label-input" for="type">Tipo:</label>
+        <input formControlName="type" type="number" placeholder="Coloque o tipo do livro" id="type">
+      </div>
       <div class="form-button">
         <button class="insertProduct" type="submit" (click)="onSubmit()" [disabled]="bookForm.invalid">Cadastrar</button>
       </div>
@@ -43,6 +47,7 @@
       <h1 class="product-autor">{{ book.autor }}</h1>
       <h1 class="product-editora">{{ book.editora }}</h1>
       <h2 class="product-quantity">Quantidade: {{ book.quantity }}</h2>
+      <h2 class="product-type">Tipo: {{ book.type }}</h2>
       <button class="delete-product" (click)="deleteBook(book.id)">Excluir</button>
       <button class="edit-product" (click)="editBook(book.id)">Editar</button>
     </div>

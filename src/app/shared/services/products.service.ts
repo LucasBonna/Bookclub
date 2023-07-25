@@ -22,6 +22,18 @@ export class ProductsService {
     return this.HttpClient.get<Books>(this.baseUrl + `/${id}`);
   }
 
+  bookSelectionsInsert(bookSelectionData: any): Observable <any> {
+    return this.HttpClient.post(this.baseUrl + '/bookSelectionInsert', bookSelectionData)
+  }
+
+  reduceStock(bookId: number) {
+    return this.HttpClient.post(this.baseUrl + '/reduceStock/' + bookId, {});
+  }
+
+  getBooksByType(type: number) {
+    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/getByType/' + type);
+  }
+
   createProducts(books: Books) {
     return this.HttpClient.post(this.baseUrl + '/createProduct', books);
   }
@@ -32,14 +44,5 @@ export class ProductsService {
 
   bookEditing(book: Books): Observable<any> {
     return this.HttpClient.post(this.baseUrl + '/edit/' + book.id, book)
-  }
-
-
-  update(book: Partial<Books>) {
-    return this.HttpClient.put(this.baseUrl + '/update/' + book.id, book);
-  }
-
-  getPlanos() {
-    return this.HttpClient.get<Array<Subscription>>(this.baseUrl + 'planos/all' );
   }
 }

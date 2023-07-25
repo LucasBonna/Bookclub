@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="book-selection-list">
+  <div class="book-item" *ngFor="let book of books">
+    <img class="product-image" [src]="book.image">
+    <h1 class="product-name">{{ book.name }}</h1>
+    <h1 class="product-isbn">{{ book.isbn }}</h1>
+    <h1 class="product-autor">{{ book.autor }}</h1>
+    <h1 class="product-editora">{{ book.editora }}</h1>
+    <button class="confirmButton" (click)="confirmButton(book.id)">Escolher este Livro</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

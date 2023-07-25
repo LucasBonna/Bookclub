@@ -24,7 +24,8 @@ export class ProductEditingComponent implements OnInit {
       autor: [''],
       editora: [''],
       quantity: [1],
-      image: ['']
+      image: [''],
+      type: [1],
     });
   }
 
@@ -48,6 +49,7 @@ export class ProductEditingComponent implements OnInit {
         editora: this.book.editora,
         quantity: this.book.quantity,
         image: this.book.image,
+        type: this.book.type
       });
     }
   }

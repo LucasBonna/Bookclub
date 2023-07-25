@@ -18,6 +18,7 @@ export class ProductManagementComponent implements OnInit {
     autor: new FormControl('', [Validators.required]),
     editora: new FormControl('', [Validators.required]),
     quantity: new FormControl(1, [Validators.required]),
+    type: new FormControl(1, [Validators.required]),
   });
 
   constructor (
@@ -26,8 +27,6 @@ export class ProductManagementComponent implements OnInit {
   ) {}
 
   books: Array<Books> = [];
-
-  livro?: Books;
 
   livroExistente: boolean = false;
 

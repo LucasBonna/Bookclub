@@ -6,4 +6,5 @@ export interface Books {
   editora: string;
   image: string;
   quantity: number;
+  type: number;
 }

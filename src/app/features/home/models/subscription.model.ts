@@ -3,6 +3,7 @@ export interface Subscription {
   description: string;
   price: number;
   type: number;
+  image: string;
 }
 
 

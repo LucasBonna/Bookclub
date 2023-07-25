@@ -1,19 +1,45 @@
-.spacer {
-  flex: 1 1 auto;
-}
-
-
-.logo-container {
+.header {
   display: flex;
   align-items: center;
-  padding-right: 10px;
-}
+  background-color: #ffca50;
+  padding: 10px;
+  color: white;
 
-.logo {
-  width: 100px;
-  height: auto;
-}
+  .logo-container {
+    margin-right: 10px;
+    margin-left: 500px;
 
-.button-container button {
-  margin-right: 8px;
+    .logo {
+      width: 230px;
+      height: auto;
+    }
+  }
+
+  .site-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 600px;
+    margin-bottom: 40px;
+
+    button {
+      text-decoration: none;
+      color: white;
+      margin-right: 50px;
+      font-size: 22px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: #5cded4;
+      }
+    }
+  }
 }

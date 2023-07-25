@@ -8,6 +8,7 @@ import { PrizeDrawComponent } from './features/home/pages/prize-draw/prize-draw.
 import { SignupComponent } from './features/login/pages/signup/signup.component';
 import { PaymentConfirmationComponent } from './features/admin/pages/payment-confirmation/payment-confirmation.component';
 import { ProductEditingComponent } from './features/admin/pages/product-editing/product-editing.component';
+import { BookSelectionComponent } from './features/home/pages/book-selection/book-selection.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent},
   { path: 'payment-confirmation/:subscriptionType', component: PaymentConfirmationComponent},
   { path: 'product-editing/:id', component: ProductEditingComponent},
+  { path: 'book-selection/:subscription_id/:subscription_type', component: BookSelectionComponent},
 ];
 
 

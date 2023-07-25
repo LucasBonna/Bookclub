@@ -1,0 +1,78 @@
+.book-selection-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+}
+
+.product-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-quantity {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.product-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.choose-product{
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.choose-product {
+  background: linear-gradient(to bottom right, #64a651, #4caf50);
+  color: #fff;
+}
+
+.choose-product:hover {
+  background: linear-gradient(to bottom right, #387d39, #64a651);
+}
+
+.confirmButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.confirmButton {
+  background: linear-gradient(to bottom right, #64a651, #4caf50);
+  color: #fff;
+}
+
+.confirmButton:hover {
+  background: linear-gradient(to bottom right, #387d39, #64a651);
+}

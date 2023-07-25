@@ -15,5 +15,11 @@ export class SubscriptionsService {
     return this.http.post<any>(this.baseUrl + '/createSubscription', subscriptionData);
   }
 
+  getUserSubscription(userId: number): Observable<any> {
+    return this.http.get<any>(this.baseUrl + '/getUserSubscription/' + userId);
+  }
 
+  checkBookSelection(subscription_id: number): Observable<any> {
+    return this.http.get<any>(this.baseUrl + '/checkBookSelection/' + subscription_id);
+  }
 }

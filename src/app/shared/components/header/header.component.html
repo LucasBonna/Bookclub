@@ -1,16 +1,14 @@
-<mat-toolbar color="primary">
+<header class="header">
   <div class="logo-container">
-    <img src="https://images2.imgbox.com/0c/48/VKTsIToM_o.png" alt="Logo" class="logo">
+    <img src="https://yata-apix-e2749511-a14d-4e67-a909-50b7e7dba3bf.s3-object.locaweb.com.br/26be2b2f15c54b138c96561bdbbe8e60.png" alt="Logo" class="logo">
   </div>
-  <span>Clube do Livro</span>
-  <span class="spacer"></span>
-  <div class="button-container">
-    <button mat-raised-button (click)="navigateByUrl('home')">Home</button>
-    <button mat-raised-button *ngIf="!user" (click)="navigateByUrl('login')">Login</button>
-    <button mat-raised-button *ngIf="!user" (click)="navigateByUrl('signup')">Sign Up</button>
-    <button mat-raised-button *ngIf="user && !isAdmin"  (click)="navigateByUrl('prize-draw')">Livro do Mes</button>
-    <button mat-raised-button *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">Product Management</button>
-    <button mat-raised-button *ngIf="user" (click)="logout()">Sair</button>
-  </div>
-</mat-toolbar>
-
+  <!-- <div class="site-name">Clube do Livro</div> -->
+  <nav class="nav-links">
+    <button (click)="navigateByUrl('home')">HOME</button>
+    <button *ngIf="!user" (click)="navigateByUrl('login')">LOGIN</button>
+    <button *ngIf="!user" (click)="navigateByUrl('signup')">SIGN UP</button>
+    <button *ngIf="user && !isAdmin" (click)="navigateByUrl('prize-draw')">LIVRO DO MÊS</button>
+    <button *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">PRODUCT MANAGEMENT</button>
+    <button *ngIf="user" (click)="logout()">SAIR</button>
+  </nav>
+</header>
