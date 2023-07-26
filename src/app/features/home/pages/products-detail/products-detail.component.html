@@ -2,14 +2,22 @@
 
 <div class="product-detail">
   <div class="product-detail-content">
-    <div *ngIf="subscription">
-      <div class="produtos-showcase">
-        <h1>Descrição: {{ subscription.description }}</h1>
-        <h2>Preço: {{ subscription.price | currency:'BRL' }}</h2>
+    <div *ngIf="subscription" class="product-info">
+      <div class="text-info">
+        <h1>{{ subscription.description }}</h1>
+        <div class="longText">
+          <p [innerHTML]="subscription.longDescription | nl2br"></p>
+        </div>
+        <h2>Valor da Mensalidade: {{ subscription.price | currency: 'BRL' }} + Frete</h2>
+        <div class="button-container">
+          <button *ngIf="isLoggedIn() && !hasActiveSubscription" (click)="navigateToPurchase()">Compre aqui!</button>
+          <button *ngIf="!isLoggedIn()" (click)="navigateToLogin()">Faça o login para comprar!</button>
+        </div>
       </div>
-      <div>
-        <button *ngIf="isLoggedIn() && !hasActiveSubscription" (click)="navigateToPurchase()">Compre aqui!</button>
-        <button *ngIf="!isLoggedIn()" (click)="navigateToLogin()">Faça o login para comprar!</button>
+      <div class="image">
+        <img
+          src="{{subscription.detailImg}}"
+        />
       </div>
     </div>
     <div *ngIf="hasActiveSubscription">

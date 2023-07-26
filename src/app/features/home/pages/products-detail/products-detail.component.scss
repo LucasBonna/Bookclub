@@ -2,41 +2,80 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #fff;
+  height: 75vh;
+  background-color: #f5f5f5;
 }
 
 .product-detail-content {
-  max-width: 400px;
-  padding: 20px;
-  background: linear-gradient(to bottom right, #8e54e9, #4776e6);
+  display: flex;
+  max-width: 800px;
+  padding: 40px;
+  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  position: relative;
-  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-detail h1 {
-  font-size: 28px;
+.product-info {
+  display: flex;
+}
+
+.text-info {
+  flex: 1;
+  padding: 10px;
+}
+
+.text-info h1 {
+  font-size: 27px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
-.product-detail h2 {
+.text-info h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
+.text-info h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
 .product-detail button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 4px;
-  background: linear-gradient(to bottom right, #4e1ac1, #c86dd7);
+  border-radius: 30px;
+  background-color: #8e54e9;
   color: #fff;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .product-detail button:hover {
-  background: linear-gradient(to bottom right, #2d0884, #8e54e9);
+  background-color: #6a2bdb;
+}
+
+.image {
+  flex: 1;
+  height: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.longText {
+  font-size: 17px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

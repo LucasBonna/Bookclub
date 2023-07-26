@@ -2,9 +2,14 @@
   <div class="logo-container">
     <img src="https://yata-apix-e2749511-a14d-4e67-a909-50b7e7dba3bf.s3-object.locaweb.com.br/26be2b2f15c54b138c96561bdbbe8e60.png" alt="Logo" class="logo">
   </div>
-  <!-- <div class="site-name">Clube do Livro</div> -->
   <nav class="nav-links">
     <button (click)="navigateByUrl('home')">HOME</button>
+    <button mat-button [matMenuTriggerFor]="subsMenu" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">NOSSOS PLANOS</button>
+    <mat-menu #subsMenu="matMenu" (closed)="onMenuClosed()">
+      <button mat-menu-item (click)="navigateToSub(1)">Plano Clubinho BV</button>
+      <button mat-menu-item (click)="navigateToSub(2)">Plano Clube BV</button>
+      <button mat-menu-item (click)="navigateToSub(3)">Plano Clube BV Pró</button>
+    </mat-menu>
     <button *ngIf="!user" (click)="navigateByUrl('login')">LOGIN</button>
     <button *ngIf="!user" (click)="navigateByUrl('signup')">SIGN UP</button>
     <button *ngIf="user && !isAdmin" (click)="navigateByUrl('prize-draw')">LIVRO DO MÊS</button>

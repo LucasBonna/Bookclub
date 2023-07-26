@@ -1,12 +1,29 @@
-<div class="container">
-  <div class="produtos-showcase" *ngFor="let subscription of subs">
-    <div class="image-container">
-      <img src="https://images2.imgbox.com/0c/48/VKTsIToM_o.png" alt="Imagem">
+<div class="white-section">
+  <div class="image-container">
+    <img src="https://yata.s3-object.locaweb.com.br/f69652aa4ce5925f4e2dbdca0ab4716db8feb5e70bc1d8feb384883119e5a77c" alt="Image 1" class="image">
+    <p class="image-title1">Plano Clubinho Bem Viver</p>
+    <p class="image-text1">Plano Clube Bem Viver Pró</p>
+    <div class="button-container">
+      <button class="button1" (click)="productDetails(subs[0])">Confira aqui esse plano!</button>
     </div>
-    <div class="content-container">
-      <h1>Descricao: {{ subscription.description }}</h1>
-      <h2>Preco: {{ subscription.price | currency:'BRL' }}</h2>
-      <button class="product-details" (click)="productDetails(subscription)">Detalhes</button>
+    <div class="line1"></div>
+  </div>
+  <div class="image-container">
+    <img src="https://yata.s3-object.locaweb.com.br/014ce0f43b3f42e5edccf4d4b9e095af0ba6b2f1f92a465296dfad5fa3f0e073" alt="Image 2" class="image">
+    <p class="image-title2">Plano Clube Bem Viver</p>
+    <p class="image-text2">Plano Clube Bem Viver Pró</p>
+    <div class="button-container">
+      <button class="button2"(click)="productDetails(subs[1])">Confira aqui esse plano!</button>
     </div>
+    <div class="line2"></div>
+  </div>
+  <div class="image-container">
+    <img src="https://yata.s3-object.locaweb.com.br/893fae053669ad698591608ec0c8b59d79664b46b780b6935869975bb56615e5" alt="Image 3" class="image">
+    <p class="image-title3">Plano Clube Bem Viver Pró</p>
+    <p class="image-text3">Plano Clube Bem Viver Pró</p>
+    <div class="button-container">
+      <button class="button3" (click)="productDetails(subs[2])">Confira aqui esse plano!</button>
+    </div>
+    <div class="line3"></div>
   </div>
 </div>

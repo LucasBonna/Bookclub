@@ -24,7 +24,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 600px;
+    margin-right: 400px;
     margin-bottom: 40px;
 
     button {
@@ -40,6 +40,11 @@
       &:hover {
         color: #5cded4;
       }
+    }
+
+    .mat-menu-panel {
+      background-color: #fff; /* Background color for the dropdown menu */
+      color: #000; /* Text color for the dropdown menu items */
     }
   }
 }
