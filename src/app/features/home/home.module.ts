@@ -7,6 +7,7 @@ import { ProductsDetailComponent } from './pages/products-detail/products-detail
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrizeDrawComponent } from './pages/prize-draw/prize-draw.component';
 import { BookSelectionComponent } from './pages/book-selection/book-selection.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 
 
@@ -16,7 +17,8 @@ import { BookSelectionComponent } from './pages/book-selection/book-selection.co
     HomeComponent,
     ProductsDetailComponent,
     PrizeDrawComponent,
-    BookSelectionComponent
+    BookSelectionComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,71 @@
+// Cores
+$color-primary: #ffca50;
+$color-secondary: #ffffff;
+$color-text: #333333;
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 50px;
+
+  background-color: $color-secondary;
+  color: $color-text;
+
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .about-img {
+      flex: 1;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .about-content {
+      flex: 1;
+      max-width: 600px;
+
+      .about-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .about-text {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  // Estilizando os títulos
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-primary;
+    font-weight: bold;
+  }
+
+  // Estilizando os links
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
