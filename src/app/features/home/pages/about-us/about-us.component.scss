@@ -1,4 +1,3 @@
-// Cores
 $color-primary: #ffca50;
 $color-secondary: #ffffff;
 $color-text: #333333;
@@ -7,18 +6,18 @@ $color-text: #333333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
-  padding: 50px;
+  gap: 3vw; /* Alterando gap para 3% da largura da tela */
+  padding: 1vw; /* Alterando padding para 5% da largura da tela */
 
   background-color: $color-secondary;
   color: $color-text;
 
-  .about-section {
+  .about-section1 {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
-    max-width: 1200px;
+    gap: 3vw; /* Alterando gap para 3% da largura da tela */
+    max-width: 90vw; /* Alterando max-width para 90% da largura da tela */
 
     @media screen and (max-width: 768px) {
       flex-direction: column-reverse;
@@ -30,24 +29,53 @@ $color-text: #333333;
       img {
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .about-img1 {
+      flex: 1;
+
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
 
     .about-content {
       flex: 1;
-      max-width: 600px;
+      max-width: 40vw; /* Alterando max-width para 40% da largura da tela */
+
+      .about-title1 {
+        text-align: center;
+        font-size: 3.2vw; /* Alterando font-size para 3.2% da largura da tela */
+        font-weight: bold;
+        margin-bottom: 1.5vw; /* Alterando margin-bottom para 2% da largura da tela */
+      }
 
       .about-title {
-        font-size: 32px;
+        font-size: 3.2vw; /* Alterando font-size para 3.2% da largura da tela */
         font-weight: bold;
-        margin-bottom: 20px;
+        margin-bottom: 2vw; /* Alterando margin-bottom para 2% da largura da tela */
+      }
+
+      .about-text1 {
+        align-items: center;
+        margin-left: -13vw;
+        width: 70vw;
+        height: 7.5vw;
+        text-align: center;
+        font-size: 1.2vw; /* Alterando font-size para 1.8% da largura da tela */
+        line-height: 2vw;
       }
 
       .about-text {
-        font-size: 18px;
-        line-height: 1.5;
+        align-items: center;
+        margin-left: -13vw;
+        width: 70vw;
+        height: 7.5vw;
+        text-align: center;
+        font-size: 1.2vw; /* Alterando font-size para 1.8% da largura da tela */
+        line-height: 2vw;
       }
     }
   }
@@ -68,4 +96,3 @@ $color-text: #333333;
     }
   }
 }
-

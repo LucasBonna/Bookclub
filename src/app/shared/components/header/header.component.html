@@ -10,6 +10,7 @@
       <button mat-menu-item (click)="navigateToSub(2)">Plano Clube BV</button>
       <button mat-menu-item (click)="navigateToSub(3)">Plano Clube BV Pró</button>
     </mat-menu>
+    <button (click)="navigateByUrl('about-us')">SOBRE</button>
     <button *ngIf="!user" (click)="navigateByUrl('login')">LOGIN</button>
     <button *ngIf="!user" (click)="navigateByUrl('signup')">SIGN UP</button>
     <button *ngIf="user && !isAdmin" (click)="navigateByUrl('prize-draw')">LIVRO DO MÊS</button>

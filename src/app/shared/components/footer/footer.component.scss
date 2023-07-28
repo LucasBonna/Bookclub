@@ -1,41 +1,41 @@
 .footer {
   background-color: #fbb040;
   color: #fff;
-  padding: 20px;
+  padding: 2vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .footer p {
-  margin-bottom: 10px;
+  margin-bottom: 1vw;
 }
 
 .footer .address {
-  font-size: 14px;
+  font-size: 1.4vw;
 }
 
 .footer .email,
 .footer .phone {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.6vw;
 }
 
 .social-icons {
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 1vw;
+  margin-top: 2vw;
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
+  width: 3vw;
+  height: 3vw;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.8vw;
   color: #fbb040;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -44,16 +44,4 @@
 .social-icon:hover {
   background-color: #fff;
   color: #fbb040;
-}
-
-.facebook-icon {
-  color: #1877f2; /* Azul do Facebook */
-}
-
-.instagram-icon {
-  color: #bc2a8d; /* Roxo do Instagram */
-}
-
-.whatsapp-icon {
-  color: #25d366; /* Verde do WhatsApp */
 }

@@ -2,36 +2,33 @@
   display: flex;
   align-items: center;
   background-color: #ffca50;
-  padding: 10px;
+  padding: 2vw; /* Usando vw (viewport width) para o padding */
   color: white;
 
   .logo-container {
-    margin-right: 10px;
-    margin-left: 500px;
+    margin-right: 2vw;
+    margin-left: 17vw; /* Use vw para garantir um espaçamento responsivo */
+    margin-bottom: 0.2vw;
 
     .logo {
-      width: 230px;
+      width: 15vw; /* Use vw para definir o tamanho da imagem de forma responsiva */
       height: auto;
     }
-  }
-
-  .site-name {
-    font-size: 24px;
-    font-weight: bold;
   }
 
   .nav-links {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 400px;
-    margin-bottom: 40px;
+    margin-right: 10vw; /* Use vw para garantir um espaçamento responsivo */
+    margin-bottom: 2vw;
+    margin-top: -3vw;
 
     button {
       text-decoration: none;
       color: white;
-      margin-right: 50px;
-      font-size: 22px;
+      margin-right: 1.5vw;
+      font-size: 1.5vw; /* Use vw para definir o tamanho do texto responsivamente */
       font-weight: bold;
       background: none;
       border: none;
@@ -43,8 +40,8 @@
     }
 
     .mat-menu-panel {
-      background-color: #fff; /* Background color for the dropdown menu */
-      color: #000; /* Text color for the dropdown menu items */
+      background-color: #fff;
+      color: #000;
     }
   }
 }
