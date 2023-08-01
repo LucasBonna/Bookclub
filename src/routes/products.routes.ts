@@ -5,8 +5,8 @@ const router = Router();
 
 const pool = mysql.createPool({
     host: '127.0.0.1',      
-    user: 'Lucas',    
-    password: '12345',  
+    user: 'root',    
+    password: 'Livia2005!',  
     database: 'db_clubedolivro',
 });
 

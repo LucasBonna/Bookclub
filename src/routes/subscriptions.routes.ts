@@ -8,8 +8,8 @@ router.use(cors());
 
 const pool: Pool = mysql.createPool({
   host: 'localhost',
-  user: 'Lucas',
-  password: '12345',
+  user: 'root',
+  password: 'Livia2005!',
   database: 'db_clubedolivro',
 });
 
