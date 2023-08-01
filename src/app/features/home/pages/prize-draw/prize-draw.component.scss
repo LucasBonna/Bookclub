@@ -94,3 +94,18 @@
   font-size: 18px;
   margin-bottom: 20px;
 }
+
+.gotoBookSelectionButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(to bottom right, #4e1ac1, #c86dd7);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.gotoBookSelectionButton:hover {
+  background: linear-gradient(to bottom right, #2d0884, #8e54e9);
+}

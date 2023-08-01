@@ -2,16 +2,16 @@
   display: flex;
   align-items: center;
   background-color: #ffca50;
-  padding: 2vw; /* Usando vw (viewport width) para o padding */
+  padding: 2vw;
   color: white;
 
   .logo-container {
     margin-right: 2vw;
-    margin-left: 17vw; /* Use vw para garantir um espaçamento responsivo */
+    margin-left: 17vw;
     margin-bottom: 0.2vw;
 
     .logo {
-      width: 15vw; /* Use vw para definir o tamanho da imagem de forma responsiva */
+      width: 15vw;
       height: auto;
     }
   }
@@ -20,7 +20,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 10vw; /* Use vw para garantir um espaçamento responsivo */
+    margin-right: 10vw;
     margin-bottom: 2vw;
     margin-top: -3vw;
 
@@ -28,7 +28,7 @@
       text-decoration: none;
       color: white;
       margin-right: 1.5vw;
-      font-size: 1.5vw; /* Use vw para definir o tamanho do texto responsivamente */
+      font-size: 1.5vw;
       font-weight: bold;
       background: none;
       border: none;

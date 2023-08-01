@@ -6,9 +6,9 @@
     <button (click)="navigateByUrl('home')">HOME</button>
     <button mat-button [matMenuTriggerFor]="subsMenu" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">NOSSOS PLANOS</button>
     <mat-menu #subsMenu="matMenu" (closed)="onMenuClosed()">
-      <button mat-menu-item (click)="navigateToSub(1)">Plano Clubinho BV</button>
-      <button mat-menu-item (click)="navigateToSub(2)">Plano Clube BV</button>
-      <button mat-menu-item (click)="navigateToSub(3)">Plano Clube BV Pró</button>
+      <button mat-menu-item (click)="productDetails(subs[0])">Plano Clubinho BV</button>
+      <button mat-menu-item (click)="productDetails(subs[1])">Plano Clube BV</button>
+      <button mat-menu-item (click)="productDetails(subs[2])">Plano Clube BV Pró</button>
     </mat-menu>
     <button (click)="navigateByUrl('about-us')">SOBRE</button>
     <button *ngIf="!user" (click)="navigateByUrl('login')">LOGIN</button>

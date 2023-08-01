@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { SubscriptionsService } from 'src/app/shared/services/subscriptions.service';
 import { Books } from '../../models/books.model';
 import { ProductsService } from 'src/app/shared/services/products.service';
-import { addMonths, format } from 'date-fns';
+import { format } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
 import  swal  from 'sweetalert2'
 
@@ -14,7 +14,6 @@ import  swal  from 'sweetalert2'
 export class BookSelectionComponent implements OnInit {
 
   constructor (
-    private subscriptionsService: SubscriptionsService,
     private productsService: ProductsService,
     private router: Router,
   ) { }

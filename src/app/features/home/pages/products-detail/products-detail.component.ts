@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subscription } from '../../models/subscription.model';
-import { Nl2brPipe } from 'src/app/shared/pipes/nl2br.pipe';
 
 @Component({
   templateUrl: './products-detail.component.html',
@@ -20,7 +19,6 @@ export class ProductsDetailComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private http: HttpClient,
   ) {}
 

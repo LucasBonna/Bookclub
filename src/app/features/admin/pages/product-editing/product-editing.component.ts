@@ -35,6 +35,7 @@ export class ProductEditingComponent implements OnInit {
       if (!isNaN(bookId)) {
         this.productsService.getBookById(bookId).subscribe(book => {
           this.book = book;
+          this.populateForm();
         });
       }
     });
