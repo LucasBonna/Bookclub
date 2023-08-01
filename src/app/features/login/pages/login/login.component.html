@@ -1,28 +1,28 @@
 <app-header></app-header>
 
-<div class="container">
-  <div class="login-container">
-    <div class="login-form-container">
-      <h3>Insira seu Login e Senha para continuar</h3>
-      <form class="login-form">
-        <div class="form-field">
-          <input type="text" [(ngModel)]="email" name="username" required>
-          <label for="username">Usuário</label>
-        </div>
-        <div class="form-field">
-          <input type="password" [(ngModel)]="password" name="password" required>
-          <label for="password">Senha</label>
-        </div>
-        <p class="error" *ngIf="error">Usuário ou Senha inválidos, por favor tente novamente!</p>
-        <div class="button-container">
-          <button mat-flat-button color="primary" type="button" (click)="authenticate()">Login</button>
-        </div>
-        <div class="button-container">
-          <button mat-flat-button color="primary" type="button" (click)="navigateToSignup()">Criar Uma Conta</button>
-        </div>
-      </form>
+  <div class="container">
+    <div class="login-container">
+      <div class="login-form-container">
+        <h3>Insira seu Email e Senha para continuar</h3>
+        <form class="login-form">
+          <div class="form-field">
+            <input type="text" [(ngModel)]="email" name="username" required>
+            <label for="username">Email</label>
+          </div>
+          <div class="form-field">
+            <input type="password" [(ngModel)]="password" name="password" required>
+            <label for="password">Senha</label>
+          </div>
+          <p class="error" *ngIf="error">Email ou Senha inválidos, por favor tente novamente!</p>
+          <div class="button-container">
+            <button mat-flat-button color="primary" type="button" (click)="authenticate()">Login</button>
+          </div>
+          <div class="button-container">
+            <button mat-flat-button color="primary" type="button" (click)="navigateToSignup()">Criar Uma Conta</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<app-footer></app-footer>
+  <app-footer class="footer"></app-footer>

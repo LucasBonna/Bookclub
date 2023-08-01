@@ -18,7 +18,7 @@
     }
 
     .subtitle {
-      margin-top: 4vw; 
+      margin-top: 4vw;
       color: #3399d9;
       font-weight: bold;
       font-size: 2.8vw;
@@ -26,10 +26,10 @@
     }
 
     .text-blue {
-      margin-top: 1vw; 
-      margin-bottom: 4vw; 
+      margin-top: 1vw;
+      margin-bottom: 4vw;
       color: #3399d9;
-      font-size: 2.5vw; 
+      font-size: 2.5vw;
       font-weight: 400;
       text-align: center;
     }
@@ -40,7 +40,7 @@
   background-color: white;
   display: flex;
   justify-content: center;
-  padding: 5vw 0; /* Ajustando o padding para 5% da largura da tela verticalmente e 0 horizontalmente */
+  padding: 5vw 0;
   flex-wrap: wrap;
 }
 
@@ -49,23 +49,23 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin: 4vw; /* Ajustando a margem para 4% da largura da tela */
+  margin: 4vw;
   height: 100%;
 }
 
 .image {
-  width: 25vw; /* Ajustando a largura para 25% da largura da tela */
+  width: 25vw;
   height: auto;
-  max-width: 250px; /* Limitando a largura máxima da imagem */
+  max-width: 250px;
 }
 
 .image-title1,
 .image-title2,
 .image-title3 {
-  margin-top: 2vw; /* Ajustando a margem superior para 2% da largura da tela */
-  margin-right: 3vw; /* Ajustando a margem direita para 3% da largura da tela */
+  margin-top: 2vw;
+  margin-right: 3vw;
   color: #ff767d;
-  font-size: 1.8vw; /* Ajustando o tamanho da fonte para 1.8% da largura da tela */
+  font-size: 1.8vw;
   font-weight: bold;
   text-align: center;
 }
@@ -73,11 +73,11 @@
 .image-text1,
 .image-text2,
 .image-text3 {
-  margin-top: 1vw; /* Ajustando a margem superior para 1% da largura da tela */
+  margin-top: 1vw;
   color: #666;
-  font-size: 1.6vw; /* Ajustando o tamanho da fonte para 1.6% da largura da tela */
+  font-size: 1.6vw;
   text-align: center;
-  padding: 2vw 4vw; /* Ajustando o padding para 2% da largura da tela verticalmente e 4% horizontalmente */
+  padding: 2vw 4vw;
 }
 
 .button-container {
@@ -85,7 +85,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 2vw; /* Ajustando a margem superior para 2% da largura da tela */
+  margin-top: 2vw;
 }
 
 .button1,
@@ -93,11 +93,11 @@
 .button3 {
   background-color: #ff767d;
   color: #fff;
-  padding: 1vw 2vw; /* Ajustando o padding para 1% da largura da tela verticalmente e 2% horizontalmente */
-  font-size: 1.8vw; /* Ajustando o tamanho da fonte para 1.8% da largura da tela */
+  padding: 1vw 2vw;
+  font-size: 1.8vw;
   font-weight: bold;
   border: none;
-  border-radius: 3vw; /* Ajustando o raio do border-radius para 3% da largura da tela */
+  border-radius: 3vw;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -109,9 +109,9 @@
 .line1,
 .line2,
 .line3 {
-  width: 25vw; /* Ajustando a largura para 25% da largura da tela */
-  height: 0.5vw; /* Ajustando a altura para 0.5% da largura da tela */
-  margin-top: 2vw; /* Ajustando a margem superior para 2% da largura da tela */
+  width: 25vw;
+  height: 0.5vw;
+  margin-top: 2vw;
 }
 
 .line1 {

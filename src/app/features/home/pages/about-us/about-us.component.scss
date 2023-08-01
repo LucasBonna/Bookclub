@@ -6,8 +6,8 @@ $color-text: #333333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3vw; /* Alterando gap para 3% da largura da tela */
-  padding: 1vw; /* Alterando padding para 5% da largura da tela */
+  margin-bottom: -1vw;
+  padding: 1vw;
 
   background-color: $color-secondary;
   color: $color-text;
@@ -16,8 +16,11 @@ $color-text: #333333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3vw; /* Alterando gap para 3% da largura da tela */
-    max-width: 90vw; /* Alterando max-width para 90% da largura da tela */
+    background-color: #ffca50;
+    margin-top: -1vw;
+    gap: 3vw;
+    width: 100vw;
+    max-width: 500vw;
 
     @media screen and (max-width: 768px) {
       flex-direction: column-reverse;
@@ -43,29 +46,31 @@ $color-text: #333333;
 
     .about-content {
       flex: 1;
-      max-width: 40vw; /* Alterando max-width para 40% da largura da tela */
+      max-width: 40vw;
 
       .about-title1 {
         text-align: center;
-        font-size: 3.2vw; /* Alterando font-size para 3.2% da largura da tela */
+        font-size: 2.2vw;
+        color: #3399d9;
         font-weight: bold;
-        margin-bottom: 1.5vw; /* Alterando margin-bottom para 2% da largura da tela */
+        margin-bottom: 1.5vw;
       }
 
       .about-title {
-        font-size: 3.2vw; /* Alterando font-size para 3.2% da largura da tela */
+        font-size: 3.2vw;
         font-weight: bold;
-        margin-bottom: 2vw; /* Alterando margin-bottom para 2% da largura da tela */
+        margin-bottom: 2vw;
       }
 
       .about-text1 {
         align-items: center;
-        margin-left: -13vw;
-        width: 70vw;
-        height: 7.5vw;
+        margin-left: -9vw;
+        width: 60vw;
+        height: 5.5vw;
+        color: #3399d9;
         text-align: center;
-        font-size: 1.2vw; /* Alterando font-size para 1.8% da largura da tela */
-        line-height: 2vw;
+        font-size: 1vw;
+        line-height: 1.5vw;
       }
 
       .about-text {
@@ -74,19 +79,122 @@ $color-text: #333333;
         width: 70vw;
         height: 7.5vw;
         text-align: center;
-        font-size: 1.2vw; /* Alterando font-size para 1.8% da largura da tela */
+        font-size: 1.2vw;
         line-height: 2vw;
       }
     }
   }
 
-  // Estilizando os títulos
+  .about-section2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #ff767d;
+    margin-top: -1vw;
+    gap: 3vw;
+    width: 100vw;
+    height: 25vw;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .about-img {
+      flex: 1;
+
+      img {
+        margin-left: 20vw;
+        margin-right: 0;
+        max-width: 50%;
+        height: auto;
+      }
+    }
+
+    .about-content {
+      flex: 1;
+      margin-top: 0;
+      max-width: 40vw;
+
+      .about-title {
+        text-align: left;
+        margin-left: -8vw;
+        margin-top: 0vw;
+        font-size: 1vw;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 1.5vw;
+      }
+
+      .about-text {
+        text-align: left;
+        margin-left: -8vw;
+        width: 20vw;
+        color: white;
+        font-size: 0.85vw;
+        line-height: 1vw;
+      }
+    }
+  }
+
+  .about-section3 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #5cded4;
+    margin-top: -1vw;
+    gap: 3vw;
+    width: 100vw;
+    height: 25vw;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .about-img {
+      flex: 1;
+
+      img {
+        margin-left: 20vw;
+        margin-right: 0;
+        max-width: 50%;
+        height: auto;
+      }
+    }
+
+    .about-content {
+      flex: 1;
+      margin-top: 0;
+      max-width: 40vw;
+
+      .about-title {
+        text-align: left;
+        margin-left: -8vw;
+        margin-top: 0vw;
+        font-size: 1vw;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 1.5vw;
+      }
+
+      .about-text {
+        text-align: left;
+        margin-left: -8vw;
+        width: 20vw;
+        color: white;
+        font-size: 0.85vw;
+        line-height: 1vw;
+      }
+    }
+  }
+
+
+
   h1, h2, h3, h4, h5, h6 {
     color: $color-primary;
     font-weight: bold;
   }
 
-  // Estilizando os links
+
   a {
     color: $color-primary;
     text-decoration: none;
@@ -96,3 +204,4 @@ $color-text: #333333;
     }
   }
 }
+
