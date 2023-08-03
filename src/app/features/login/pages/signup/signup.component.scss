@@ -40,20 +40,19 @@
 
 .signup-form .form-field label {
   position: absolute;
-  top: 1.1vw;
-  left: - 1.5vw;
-  transform: translateY(-50%);
+  top: -1vw;
+  left: 1vw;
   color: rgba(255, 255, 255, 0.7);
   pointer-events: none;
   transition: all 0.3s ease;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 .signup-form .form-field input:focus + label,
 .signup-form .form-field input:valid + label,
 .signup-form .form-field input::placeholder + label {
-  top: 1.1vw;
-  font-size: 1vw;
+  top: -2vw;
+  font-size: 0.8vw;
   color: rgba(255, 255, 255, 0.7);
 }
 
