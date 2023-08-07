@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node server",
     "watch": "ts-node-dev --respawn server.ts",
-    "build": "ts-node server"
+    "build": "NODE_ENV=production NPM_CONFIG_PRODUCTION=false yarn install && yarn start"
   },
   "author": "",
   "license": "ISC",
