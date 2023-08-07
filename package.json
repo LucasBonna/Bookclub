@@ -9,6 +9,9 @@
     "watch": "ts-node-dev --respawn server.ts",
     "build": "NODE_ENV=production NPM_CONFIG_PRODUCTION=false yarn install && yarn start"
   },
+  "engines": {
+    "node": ">=16.14"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
