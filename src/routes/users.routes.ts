@@ -2,8 +2,10 @@ import { Router } from 'express';
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import mysql, { RowDataPacket } from 'mysql2';
+import cors from 'cors';
 
 const router = Router();
+router.use(cors());
 
 const pool = mysql.createPool({
     host: 'db_clube.mysql.dbaas.com.br',

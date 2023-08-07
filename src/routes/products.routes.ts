@@ -1,7 +1,9 @@
 import { Router, Request, Response } from 'express';
 import mysql, { Pool, OkPacket, RowDataPacket } from 'mysql2';
+import cors from 'cors';
 
 const router = Router();
+router.use(cors());
 
 const pool = mysql.createPool({
     host: 'db_clube.mysql.dbaas.com.br',      
