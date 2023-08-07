@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node server",
-    "watch": "tsnd --respawn server.ts"
+    "watch": "ts-node-dev --respawn server.ts",
+    "build": "ts-node server"
   },
   "author": "",
   "license": "ISC",

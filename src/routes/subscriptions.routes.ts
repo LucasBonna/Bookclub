@@ -7,10 +7,10 @@ const router = Router();
 router.use(cors());
 
 const pool: Pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'Livia2005!',
-  database: 'db_clubedolivro',
+  host: 'db_clube.mysql.dbaas.com.br',
+  user: 'db_clube',
+  password: 'Peach217!',
+  database: 'db_clube',
 });
 
 router.post('/createSubscription', async (req: Request, res: Response) => {

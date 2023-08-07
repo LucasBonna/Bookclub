@@ -4,10 +4,10 @@ import mysql, { Pool, OkPacket, RowDataPacket } from 'mysql2';
 const router = Router();
 
 const pool = mysql.createPool({
-    host: '127.0.0.1',      
-    user: 'root',    
-    password: 'Livia2005!',  
-    database: 'db_clubedolivro',
+    host: 'db_clube.mysql.dbaas.com.br',      
+    user: 'db_clube',    
+    password: 'Peach217!',  
+    database: 'db_clube',
 });
 
 const connection = pool.promise();
