@@ -12,6 +12,7 @@ const pool = mysql.createPool({
     database: 'db_clube',
 });
 
+
 const connection = pool.promise();
 
 router.get('/all', async (req: Request, res: Response) => {
