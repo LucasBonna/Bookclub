@@ -8,7 +8,7 @@ import { Books } from 'src/app/features/home/models/books.model';
 })
 export class ProductsService {
 
-  baseUrl: string = 'http://localhost:3000/products';
+  baseUrl: string = 'http://18.228.195.175:3000/products';
 
 
   constructor(private HttpClient: HttpClient) { }

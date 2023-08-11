@@ -8,7 +8,7 @@ import { Subscription } from 'src/app/features/home/models/subscription.model';
 })
 export class SubscriptionsService {
 
-  private baseUrl = 'http://localhost:3000/subscriptions';
+  private baseUrl = 'http://18.228.195.175:3000/subscriptions';
 
   private subs: Subscription[] = [
     {

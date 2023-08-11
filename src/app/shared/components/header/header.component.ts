@@ -57,6 +57,6 @@ productDetails(subscription: Subscription) {
   this.router.navigateByUrl(`products-detail/${subscription.id}`, { state: { subscription } });
  setTimeout(() => {
   window.location.reload();
-}, 100);
+}, 500);
 }
 }

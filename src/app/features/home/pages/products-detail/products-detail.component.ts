@@ -12,9 +12,9 @@ export class ProductsDetailComponent implements OnInit {
   subscription: Subscription | null = null;
   hasActiveSubscription: boolean = false;
   purchaseLinks: { [key: number]: string } = {
-    1: '/link-1',
-    2: '/link-2',
-    3: '/link-3',
+    1: 'http://pag.ae/7ZEQ6n7hK',
+    2: 'http://pag.ae/7ZEQ68nju',
+    3: 'http://pag.ae/7ZEQ6n7hK',
   };
 
   constructor(
@@ -38,7 +38,7 @@ export class ProductsDetailComponent implements OnInit {
     if (userId && subscriptionType) {
       try {
         const params = new HttpParams().set('userId', userId).set('subscriptionType', subscriptionType.toString());
-        const response: any = await this.http.get(`http://localhost:3000/subscriptions/checkSubscription`, { params }).toPromise();
+        const response: any = await this.http.get(`http://18.228.195.175:3000/subscriptions/checkSubscription`, { params }).toPromise();
         const hasActiveSubscription = response?.hasActiveSubscription as boolean || false;
 
         if (hasActiveSubscription) {
@@ -46,7 +46,7 @@ export class ProductsDetailComponent implements OnInit {
         } else {
           const purchaseLink = this.purchaseLinks[subscriptionType];
           if (purchaseLink) {
-            this.router.navigateByUrl(purchaseLink);
+            window.open(purchaseLink, '_blank');
           }
         }
       } catch (error) {
@@ -63,7 +63,7 @@ export class ProductsDetailComponent implements OnInit {
       try {
         const params = new HttpParams().set('userId', userId).set('subscriptionType', subscriptionType.toString());
 
-        const response: any = await this.http.get(`http://localhost:3000/subscriptions/checkSubscription`, { params }).toPromise();
+        const response: any = await this.http.get(`https://node-api-teste.onrender.com/subscriptions/checkSubscription`, { params }).toPromise();
 
         const hasActiveSubscription = response?.hasActiveSubscription as boolean || false;
         const results = response?.results || [];

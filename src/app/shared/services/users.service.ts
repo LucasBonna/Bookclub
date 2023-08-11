@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  private baseUrl = 'http://localhost:3000/users';
+  private baseUrl = 'http://18.228.195.175:3000/users';
 
   constructor(private http: HttpClient) { }
 
