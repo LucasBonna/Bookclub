@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express');
 import cors from 'cors';
 import routes from './src/routes/index';
 import bodyParser from 'body-parser';
