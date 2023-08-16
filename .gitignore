@@ -2,6 +2,8 @@
 
 dist
 
+config.ts
+
 # Compiled output
 /dist
 /tmp
