@@ -2,8 +2,6 @@
 
 dist
 
-config.ts
-
 # Compiled output
 /dist
 /tmp
@@ -44,3 +42,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Outras entradas
+
+config.ts
