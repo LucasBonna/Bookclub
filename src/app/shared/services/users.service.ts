@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
+import { environment } from 'config';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  private baseUrl = 'http://18.228.195.175:3000/users';
+  private baseUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'config';
 import { Subscription } from 'src/app/features/home/models/subscription.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Subscription } from 'src/app/features/home/models/subscription.model';
 })
 export class SubscriptionsService {
 
-  private baseUrl = 'http://18.228.195.175:3000/subscriptions';
+  private baseUrl: string = environment.apiUrl;
 
   private subs: Subscription[] = [
     {

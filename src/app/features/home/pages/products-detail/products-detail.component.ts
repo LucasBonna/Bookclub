@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { environment } from 'config';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subscription } from '../../models/subscription.model';
 
@@ -16,6 +17,8 @@ export class ProductsDetailComponent implements OnInit {
     2: 'http://pag.ae/7ZEQ68nju',
     3: 'http://pag.ae/7ZEQ6n7hK',
   };
+
+  url: string = environment.apiUrl;
 
   constructor(
     private router: Router,
@@ -38,7 +41,7 @@ export class ProductsDetailComponent implements OnInit {
     if (userId && subscriptionType) {
       try {
         const params = new HttpParams().set('userId', userId).set('subscriptionType', subscriptionType.toString());
-        const response: any = await this.http.get(`http://18.228.195.175:3000/subscriptions/checkSubscription`, { params }).toPromise();
+        const response: any = await this.http.get(`${this.url}/subscriptions/checkSubscription`, { params }).toPromise();
         const hasActiveSubscription = response?.hasActiveSubscription as boolean || false;
 
         if (hasActiveSubscription) {

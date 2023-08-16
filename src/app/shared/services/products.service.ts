@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'config';
 import { Books } from 'src/app/features/home/models/books.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Books } from 'src/app/features/home/models/books.model';
 })
 export class ProductsService {
 
-  baseUrl: string = 'http://18.228.195.175:3000/products';
+  private baseUrl: string = environment.apiUrl;
 
 
   constructor(private HttpClient: HttpClient) { }
