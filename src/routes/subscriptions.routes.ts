@@ -2,15 +2,18 @@ import { Router } from 'express';
 import { Request, Response } from 'express';
 import mysql, { Pool, RowDataPacket } from 'mysql2/promise';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 const router = Router();
 router.use(cors());
 
-const pool: Pool = mysql.createPool({
-  host: 'db_clube.mysql.dbaas.com.br',
-  user: 'db_clube',
-  password: 'Peach217!',
-  database: 'db_clube',
+dotenv.config();
+
+const pool = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,    
+    password: process.env.DB_PASSWORD,  
+    database: process.env.DB_DATABASE,
 });
 
 router.post('/createSubscription', async (req: Request, res: Response) => {

@@ -3,15 +3,18 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import mysql, { RowDataPacket } from 'mysql2';
 import cors from 'cors';
+import dotenv from 'dotenv'
 
 const router = Router();
 router.use(cors());
 
+dotenv.config();
+
 const pool = mysql.createPool({
-    host: 'db_clube.mysql.dbaas.com.br',
-    user: 'db_clube',     
-    password: 'Peach217!',
-    database: 'db_clube',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,    
+    password: process.env.DB_PASSWORD,  
+    database: process.env.DB_DATABASE,
 });
 
 const connection = pool.promise();
