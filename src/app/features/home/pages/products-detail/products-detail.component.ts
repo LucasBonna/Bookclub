@@ -66,7 +66,7 @@ export class ProductsDetailComponent implements OnInit {
       try {
         const params = new HttpParams().set('userId', userId).set('subscriptionType', subscriptionType.toString());
 
-        const response: any = await this.http.get(`https://node-api-teste.onrender.com/subscriptions/checkSubscription`, { params }).toPromise();
+        const response: any = await this.http.get(`${this.url}/subscriptions/checkSubscription`, { params }).toPromise();
 
         const hasActiveSubscription = response?.hasActiveSubscription as boolean || false;
         const results = response?.results || [];

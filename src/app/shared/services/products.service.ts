@@ -15,7 +15,7 @@ export class ProductsService {
   constructor(private HttpClient: HttpClient) { }
 
   getBooks() {
-    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/all');
+    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/products/all');
   }
 
   getBookById(id: number) {
@@ -23,26 +23,26 @@ export class ProductsService {
   }
 
   bookSelectionsInsert(bookSelectionData: any): Observable <any> {
-    return this.HttpClient.post(this.baseUrl + '/bookSelectionInsert', bookSelectionData)
+    return this.HttpClient.post(this.baseUrl + '/products/bookSelectionInsert', bookSelectionData)
   }
 
   reduceStock(bookId: number) {
-    return this.HttpClient.post(this.baseUrl + '/reduceStock/' + bookId, {});
+    return this.HttpClient.post(this.baseUrl + '/products/reduceStock/' + bookId, {});
   }
 
   getBooksByType(type: number) {
-    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/getByType/' + type);
+    return this.HttpClient.get<Array<Books>>(this.baseUrl + '/products/getByType/' + type);
   }
 
   createProducts(books: Books) {
-    return this.HttpClient.post(this.baseUrl + '/createProduct', books);
+    return this.HttpClient.post(this.baseUrl + '/products/createProduct', books);
   }
 
   deleteBook(id: number) {
-    return this.HttpClient.delete(this.baseUrl + '/remove/' + id);
+    return this.HttpClient.delete(this.baseUrl + '/products/remove/' + id);
   }
 
   bookEditing(book: Books): Observable<any> {
-    return this.HttpClient.post(this.baseUrl + '/edit/' + book.id, book)
+    return this.HttpClient.post(this.baseUrl + '/products/edit/' + book.id, book)
   }
 }

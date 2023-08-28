@@ -12,7 +12,7 @@
     </mat-menu>
     <button (click)="navigateByUrl('about-us')">SOBRE</button>
     <button *ngIf="!user" (click)="navigateByUrl('login')">LOGIN</button>
-    <button *ngIf="!user" (click)="navigateByUrl('signup')">SIGN UP</button>
+    <button *ngIf="!user" (click)="navigateByUrl('signup')">CADASTRO</button>
     <button *ngIf="user && !isAdmin" (click)="navigateByUrl('prize-draw')">LIVRO DO MÊS</button>
     <button *ngIf="user && isAdmin" (click)="navigateByUrl('product-management')">PRODUCT MANAGEMENT</button>
     <button *ngIf="user" (click)="logout()">SAIR</button>

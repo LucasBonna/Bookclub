@@ -13,12 +13,15 @@ export class SubscriptionsComponent implements OnInit {
 
   subs: Subscription[] = [];
 
+  subscription: Subscription | null = null;
+
 constructor (
   private router: Router,
   private subscriptionsService: SubscriptionsService,) { }
 
 ngOnInit(): void {
   this.subs = this.subscriptionsService.getSubscriptions();
+  this.subscription = history.state.subscription;
 }
 
 

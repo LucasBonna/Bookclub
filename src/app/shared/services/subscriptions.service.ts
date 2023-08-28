@@ -56,14 +56,14 @@ export class SubscriptionsService {
   }
 
   createSubscription(subscriptionData: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl + '/createSubscription', subscriptionData);
+    return this.http.post<any>(this.baseUrl + '/subscriptions/createSubscription', subscriptionData);
   }
 
   getUserSubscription(userId: number): Observable<any> {
-    return this.http.get<any>(this.baseUrl + '/getUserSubscription/' + userId);
+    return this.http.get<any>(this.baseUrl + '/subscriptions/getUserSubscription/' + userId);
   }
 
   checkBookSelection(subscription_id: number): Observable<any> {
-    return this.http.get<any>(this.baseUrl + '/checkBookSelection/' + subscription_id);
+    return this.http.get<any>(this.baseUrl + '/subscriptions/checkBookSelection/' + subscription_id);
   }
 }

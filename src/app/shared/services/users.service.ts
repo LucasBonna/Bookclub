@@ -14,12 +14,12 @@ export class UsersService {
 
 
   getUserByEmailAndPassword(email: string, password: string) {
-    return this.http.post<{ message: string, user: User | undefined }>(`${this.baseUrl}/authenticate`, { email , password });
+    return this.http.post<{ message: string, user: User | undefined }>(`${this.baseUrl}/users/authenticate`, { email , password });
   }
 
 
   createUser(user: User) {
-    return this.http.post<{ message: string }>(`${this.baseUrl}/createUser`, user);
+    return this.http.post<{ message: string }>(`${this.baseUrl}/users/createUser`, user);
   }
 
 
