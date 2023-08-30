@@ -19,7 +19,7 @@ export class SubscriptionsService {
       type: 1,
       image: 'https://yata.s3-object.locaweb.com.br/f69652aa4ce5925f4e2dbdca0ab4716db8feb5e70bc1d8feb384883119e5a77c',
       detailImg: 'https://yata-apix-e2749511-a14d-4e67-a909-50b7e7dba3bf.s3-object.locaweb.com.br/92f663a395a5479f8a05a6dc71d59df5.png',
-      longDescription: "O plano perfeito para seu filho(a) aprender se divertindo!\n\nO que você recebe mensalmente:\n\n- 1 Livro Infantil ligado a Antroposofia ou à Pedagogia Waldorf (escolhidos entre as opções disponibilizadas por nossa curadoria)\n\n- 1 Brinquedo Educativo de madeira que estimula o aprendizado de forma lúdica"
+      longDescription: "O plano perfeito para seu filho(a) aprender se divertindo!\n\nO que você recebe mensalmente:\n\n- 1 Livro Infantil ligado a Antroposofia ou à Pedagogia Waldorf (escolhidos entre as opções disponibilizadas por nossa curadoria)\n\n"
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ export class SubscriptionsService {
       type: 3,
       image: 'https://yata.s3-object.locaweb.com.br/893fae053669ad698591608ec0c8b59d79664b46b780b6935869975bb56615e5',
       detailImg: 'https://yata-apix-e2749511-a14d-4e67-a909-50b7e7dba3bf.s3-object.locaweb.com.br/e5afc9b34e2944aba87ba56657806540.png',
-      longDescription: "Plano para você educador ou profissional de Escola Waldorf!\n\nO que você recebe mensalmente:\n\n- 1 Livro voltado para professores e profissionais da área (escolhidos entre as opções disponibilizadas por nossa curadoria)\n\n- 1 Livro Infantil que pode ser utilizado para contação de histórias, biblioteca da escola, presentear professores ou alunos"
+      longDescription: "Plano para você educador ou profissional de Escola Waldorf!\n\nO que você recebe mensalmente:\n\n- 1 Livro voltado para professores e profissionais da área (escolhidos entre as opções disponibilizadas por nossa curadoria)\n\n"
     }
   ]
 
