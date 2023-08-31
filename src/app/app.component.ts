@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Clube Do Livro Waldorf';
+  title = 'Clube Do Livro Bem Viver';
 
   constructor(){
-    console.log('Title: ',this.title);
   }
 }
