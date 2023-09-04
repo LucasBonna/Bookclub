@@ -84,7 +84,6 @@ router.get('/:id', async (req: Request, res: Response) => {
                 res.status(404).json({ message: 'Usuário não encontrado.' });
             }
         } else {
-            // Handle the case when the query returns an OkPacket
             res.status(404).json({ message: 'Usuário não encontrado.' });
         }
     } catch (err) {
@@ -109,7 +108,6 @@ router.post('/createUser', async (req: Request, res: Response) => {
                 return;
             }
         } else {
-            // Handle the case when the query returns an OkPacket
             res.status(409).send({ message: 'O email informado já está registrado.' });
             return;
         }
